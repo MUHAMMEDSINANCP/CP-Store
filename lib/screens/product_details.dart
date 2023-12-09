@@ -130,9 +130,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 boxFit: BoxFit.fill,
                               );
                             },
-
                             autoplay: true,
-                            itemCount: 3,
+                            itemCount: productsModel!.images!.length,
                             pagination: const SwiperPagination(
                               alignment: Alignment.bottomCenter,
                               builder: DotSwiperPaginationBuilder(

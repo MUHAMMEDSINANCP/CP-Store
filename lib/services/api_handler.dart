@@ -1,9 +1,9 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:convert';
 import 'dart:developer';
-
+import 'package:cp_store/consts/api.dart';
 import 'package:http/http.dart' as http;
-
-import '../consts/api_consts.dart';
 import '../models/categories_model.dart';
 import '../models/products_model.dart';
 import '../models/users_model.dart';

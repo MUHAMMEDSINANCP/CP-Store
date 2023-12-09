@@ -33,13 +33,13 @@ class SaleWidget extends StatelessWidget {
                   color: const Color(0xFF9689CE),
                   borderRadius: BorderRadius.circular(18),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Column(
                     // mainAxisSize: MainAxisSize.max,
                     // mainAxisAlignment: MainAxisAlignment.center,
                     // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Get the special discount",
                         style: TextStyle(color: Colors.white),

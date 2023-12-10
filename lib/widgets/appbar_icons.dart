@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AppBarIcons extends StatelessWidget {
-  const AppBarIcons({Key? key, required this.function, required this.icon})
+  const AppBarIcons(
+      {Key? key,
+      required this.function,
+      required this.icon,
+      required this.iconSize})
       : super(key: key);
   final Function function;
+  final double iconSize;
   final IconData icon;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +25,10 @@ class AppBarIcons extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(6.0),
-              child: Icon(icon),
+              child: Icon(
+                icon,
+                size: iconSize,
+              ),
             ),
           )),
     );

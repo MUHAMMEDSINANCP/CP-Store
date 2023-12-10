@@ -1,6 +1,6 @@
+import 'package:cp_store/consts/global_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../models/categories_model.dart';
 import '../services/api_handler.dart';
 import '../widgets/category_widget.dart';
@@ -16,8 +16,10 @@ class CategoriesScreen extends StatelessWidget {
             future: APIHandler.getAllCategories(),
             builder: ((context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
+                return Center(
+                  child: CircularProgressIndicator(
+                    color: lightIconsColor,
+                  ),
                 );
               } else if (snapshot.hasError) {
                 Center(
@@ -31,7 +33,8 @@ class CategoriesScreen extends StatelessWidget {
               return GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 3,
+                  itemCount: snapshot.data?.length ?? 0,
+                  // itemCount: 2,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 0.0,

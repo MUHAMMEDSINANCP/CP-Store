@@ -56,9 +56,22 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Scaffold(
           appBar: AppBar(
-            // elevation: 4,
-            title: const Text('Home'),
+            elevation: 3,
+            title: Text(
+              'CP STORE',
+              style: TextStyle(
+                letterSpacing: 2,
+                fontWeight: FontWeight.bold,
+                shadows: [
+                  Shadow(
+                      color: lightIconsColor,
+                      blurRadius: 2,
+                      offset: const Offset(1, 1))
+                ],
+              ),
+            ),
             leading: AppBarIcons(
+              iconSize: 30,
               function: () {
                 Navigator.push(
                   context,
@@ -72,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             actions: [
               AppBarIcons(
+                iconSize: 30,
                 function: () {
                   Navigator.push(
                     context,
@@ -152,24 +166,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const Spacer(),
                             AppBarIcons(
-                                function: () {
-                                  Navigator.push(
-                                      context,
-                                      PageTransition(
-                                          type: PageTransitionType.fade,
-                                          child: const FeedsScreen()));
-                                },
-                                icon: IconlyBold.arrowRight2),
+                              function: () {
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.fade,
+                                        child: const FeedsScreen()));
+                              },
+                              icon: IconlyBold.arrowRight2,
+                              iconSize: 40,
+                            ),
                           ],
                         ),
                       ),
                       FutureBuilder<List<ProductsModel>>(
-                          future: APIHandler.getAllProducts(limit: "3"),
+                          future: APIHandler.getAllProducts(limit: "20    "),
                           builder: ((context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return const Center(
-                                child: CircularProgressIndicator(),
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  color: lightIconsColor,
+                                ),
                               );
                             } else if (snapshot.hasError) {
                               Center(

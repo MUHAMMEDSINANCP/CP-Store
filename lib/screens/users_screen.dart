@@ -1,3 +1,4 @@
+import 'package:cp_store/consts/global_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +17,10 @@ class UsersScreen extends StatelessWidget {
         future: APIHandler.getAllUsers(),
         builder: ((context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Center(
+              child: CircularProgressIndicator(
+                color: lightIconsColor,
+              ),
             );
           } else if (snapshot.hasError) {
             Center(
@@ -30,6 +33,7 @@ class UsersScreen extends StatelessWidget {
           }
           return ListView.builder(
               itemCount: snapshot.data!.length,
+              // itemCount: 3,
               itemBuilder: (ctx, index) {
                 return ChangeNotifierProvider.value(
                   value: snapshot.data![index],

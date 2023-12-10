@@ -10,10 +10,10 @@ class FeedsGridWidget extends StatelessWidget {
   final List<ProductsModel> productsList;
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return GridView.builder(            
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 3,
+        itemCount: productsList.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 0.0,

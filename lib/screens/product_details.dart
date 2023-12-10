@@ -54,8 +54,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               )
             : productsModel == null
-                ? const Center(
-                    child: CircularProgressIndicator(),
+                ? Center(
+                    child: CircularProgressIndicator(
+                      color: lightIconsColor,
+                    ),
                   )
                 : SingleChildScrollView(
                     child: Column(

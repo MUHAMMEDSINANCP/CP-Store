@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_print
 
+import 'package:cp_store/consts/global_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../models/products_model.dart';
 import '../services/api_handler.dart';
 import '../widgets/feeds_widget.dart';
@@ -57,8 +57,10 @@ class _FeedsScreenState extends State<FeedsScreen> {
         title: const Text('All Products'),
       ),
       body: productsList.isEmpty
-          ? const Center(
-              child: CircularProgressIndicator(),
+          ? Center(
+              child: CircularProgressIndicator(
+                color: lightIconsColor,
+              ),
             )
           : SingleChildScrollView(
               controller: _scrollController,
@@ -80,7 +82,10 @@ class _FeedsScreenState extends State<FeedsScreen> {
                             child: const FeedsWidget());
                       }),
                   if (_isLoading)
-                    const Center(child: CircularProgressIndicator()),
+                    Center(
+                        child: CircularProgressIndicator(
+                      color: lightIconsColor,
+                    )),
                 ],
               ),
             ),

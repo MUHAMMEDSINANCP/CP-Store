@@ -77,16 +77,18 @@ class FeedsWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  productsModelProvider.title.toString(),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  style: const TextStyle(
-                    fontSize: 17,
-                    //  fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w700,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    productsModelProvider.title.toString(),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    style: const TextStyle(
+                      fontSize: 17,
+                      //  fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),

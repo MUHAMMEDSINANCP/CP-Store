@@ -2,11 +2,9 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:cp_store/screens/categories_screen.dart';
 import 'package:cp_store/screens/feeds_screen.dart';
 import 'package:cp_store/screens/users_screen.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:page_transition/page_transition.dart';
-
 import '../consts/global_colors.dart';
 import '../models/products_model.dart';
 import '../services/api_handler.dart';
@@ -115,9 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fillColor: Theme.of(context).cardColor,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
-                        borderSide: BorderSide(
-                          color: Theme.of(context).cardColor,
-                        ),
+                        borderSide: BorderSide(color: lightIconsColor),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -127,6 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       suffixIcon: Icon(
+                        size: 25,
                         IconlyLight.search,
                         color: lightIconsColor,
                       )),
@@ -136,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Expanded(
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
                     child: Column(children: [
                       SizedBox(
                         height: size.height * 0.25,
@@ -180,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       FutureBuilder<List<ProductsModel>>(
-                          future: APIHandler.getAllProducts(limit: "20    "),
+                          future: APIHandler.getAllProducts(limit: "10"),
                           builder: ((context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {

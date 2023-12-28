@@ -1,16 +1,19 @@
-# cp_store
+## CP Store
 
-A new Flutter project.
+CP Store is an MVP E-Commerce app offering a variety of products like shoes, t-shirts, pants, and watches fetched from a fake API. Users can browse products by category, view customer and admin details, and experience a lazy loading feature to manage data efficiently.
 
-## Getting Started
+### Key Features:
 
-This project is a starting point for a Flutter application.
+Product Variety: Offers shoes, t-shirts, pants, watches, and more.
 
-A few resources to get you started if this is your first Flutter project:
+Category Selection: Browse products categorized for easy exploration.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Customer & Admin Details: View details for both customer and admin roles.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Lazy Loading: Efficient data loading, displaying limited data at a time.
+
+### Usage:
+CP Store serves as a learning tool to deeply understand API concepts, offering a variety of products and functionalities like category browsing and efficient data loading.
+
+### Feedback:
+For any suggestions or feedback, please contact us at cpmuhammedsinan@gmail.com. Your inputs are valuable for enhancing CP Store.
